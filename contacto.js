@@ -31,12 +31,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     // Validación del destino
     if (!destino) {
-        showError('destino', 'Por favor seleccione un destino');
+        showError('plan', 'Por favor seleccione un plan');
         isValid = false;
     }
     
     if (isValid) {
-        mostrarResultados(nombre, email, destino);
+        mostrarResultados(nombre, email, plan);
         this.reset();
     }
 });
@@ -53,7 +53,7 @@ function clearErrors() {
     document.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
 }
 
-function mostrarResultados(nombre, email, destino) {
+function mostrarResultados(nombre, email, plan) {
     const resultadosDiv = document.getElementById('resultados');
     
     const container = document.createElement('div');
@@ -66,7 +66,7 @@ function mostrarResultados(nombre, email, destino) {
     datos.innerHTML = `
         <strong>Nombre:</strong> ${nombre}<br>
         <strong>Email:</strong> ${email}<br>
-        <strong>Destino:</strong> ${destino}
+        <strong>Plan:</strong> ${plan}
     `;
     
     container.appendChild(titulo);
