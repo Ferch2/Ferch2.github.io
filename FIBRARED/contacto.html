@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Destinos Turísticos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Contacto</h1>
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" required maxlength="50">
+                <div class="error-message" id="nombreError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="destino">Destino de interés:</label>
+                <select id="destino" required>
+                    <option value="">Seleccione un destino</option>
+                    <option value="100MG">100 MG</option>
+                    <option value="asia">Asia</option>
+                    <option value="america">América</option>
+                </select>
+                <div class="error-message" id="destinoError"></div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="resultados"></div>
+    </main>
+
+    <script src="contacto.js"></script>
+</body>
+</html>

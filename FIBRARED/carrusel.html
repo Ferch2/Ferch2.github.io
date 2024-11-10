@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <style>
+        /* Estilos para el carrusel */
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+        
+        #foto {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botones del carrusel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel-container">
+    <button class="carousel-button prev" onclick="atras()">&#10094; Atrás</button>
+    <img id="foto" src="imagenes/foto1.jpeg" alt="Imagen del carrusel">
+    <button class="carousel-button next" onclick="adelante()">Siguiente &#10095;</button>
+</div>
+
+<script type="text/javascript">
+    var num = 0;
+    let fotos = [
+        "imagenes/foto1.jpeg",
+        "imagenes/foto2.jpeg",
+        "imagenes/foto3.jpeg",
+        // "imagenes/foto4.jpeg",
+        // "imagenes/foto5.jpeg",
+    ];
+    
+    function adelante() {
+        num++;
+        if (num == fotos.length) num = 0;
+        var foto = document.getElementById("foto");
+        foto.src = fotos[num];
+    }
+    
+    function atras() {
+        num--;
+        if (num < 0) num = fotos.length - 1;
+        var foto = document.getElementById("foto");
+        foto.src = fotos[num];
+    }
+</script>
+
+</body>
+</html>
