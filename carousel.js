@@ -24,7 +24,11 @@
 //     updateImage();
 // });
 
-
+// // Rotación automática cada 5 segundos
+// setInterval(() => {
+//     currentIndex = (currentIndex + 1) % images.length;
+//     updateImage();
+// }, 5000);
 
 
 
