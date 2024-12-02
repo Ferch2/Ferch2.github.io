@@ -6,7 +6,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
-    const plan = document.getElementById('destino').value;
+    const plan = document.getElementById('plan').value;
     
     let isValid = true;
     
@@ -30,7 +30,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }
     
     // Validación de plan
-    if (!destino) {
+    if (!plan) {
         showError('plan', 'Por favor seleccione un plan');
         isValid = false;
     }
@@ -66,7 +66,7 @@ function mostrarResultados(nombre, email, plan) {
     datos.innerHTML = `
         <strong>Nombre:</strong> ${nombre}<br>
         <strong>Email:</strong> ${email}<br>
-        <strong>:</strong> ${plan}
+        <strong>Plan:</strong> ${plan}
     `;
     
     container.appendChild(titulo);
